@@ -3,16 +3,8 @@
 let playerPoints = 0;
 let computerPoint = 0;
 
-console.log(playRound("ROCK","PAPER"));
-console.log(playRound("PAPER","PAPER"));
-console.log(playRound("SISSORS","PAPER"));
-console.log(playRound("PAPER","ROCK"));
-console.log(playRound("ROCK","ROCK"));
 
-
-// New variable playerPoints with value 0
-// New variable computerPoints with value 0
-// playGamecd  
+playGame();
 
 
 
@@ -50,7 +42,7 @@ function computerPlay() {
         case 0:
             return "ROCK";
         case 1:
-            return "PAPPER";
+            return "PAPER";
         case 2:
             return "SISSORS";
     }
@@ -106,38 +98,38 @@ function playRound (playerSelection, computerSelection) {
     switch (result) {
         case 1:
             playerPoints++;
-            return `You win! ${playerSelection} beats ${computerSelection}!`;
+            return `You win the round! ${playerSelection} beats ${computerSelection}!`;
         case -1:
             computerPoint++;
-            return `You lose! ${computerSelection} beats ${playerSelection}!`;
+            return `You lose the round! ${computerSelection} beats ${playerSelection}!`;
         case 0:
-            return "Tie!";
+            return "Tie round!";
 
     }
 
-//     Make a variable called result and set it to 0
-//     Based on value of playerSelection:
-//         "ROCK" = Based of value of computerSelection:
-//             "ROCK" = 0
-//             "PAPER" = -1
-//             "SISSORS" = 1
-//         "PAPER" = Based of value of computerSelection:
-//             "ROCK" = 1
-//             "PAPER" = 0
-//             "SISSORS" = -1
-//         "SISSORS" = Based of value of computerSelection:
-//             "ROCK" = -1
-//             "PAPER" = 1
-//             "SISSORS" = 0
-//     Based on value of Result:
-//         -1: 
-//             Give Player 1 Point
-//             Return `You win! ${playerSelction} beats ${computerSelection}!`
-//         0:
-//             Return `Tie!!`
-//         1:
-//             Give Computer 1 Point
-//             Return `You lose! ${computerSelection} beats ${playerSelection}!`
+}
+
+function playGame() {
+    console.log("Best 3 out of 5 rounds!");
+    for (let i = 1; i <= 5; i++) {
+        console.log(`Round ${i}!`);
+        let playerSelection = playerPlay();
+        console.log(`You chose: ${playerSelection}`);
+        let computerSelection = computerPlay();
+        console.log(`Computer chose: ${computerSelection}`);
+        console.log(playRound(playerSelection,computerSelection));
+        console.log("=================================");
+    }
+    console.log("Final Score:");
+    console.log(`You won ${playerPoints} rounds.`);
+    console.log(`Computer won ${computerPoint} rounds.`);
+    if (playerPoints > computerPoint) {
+        console.log("You win the game!");
+    } else if (playerPoints < computerPoint) {
+        console.log("Computer wins the game!");
+    } else {
+        console.log("The game was a tie!");
+    }
 }
 
 // playGame Function
