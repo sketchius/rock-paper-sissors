@@ -1,0 +1,52 @@
+.choiceButton {
+    font-size: 36px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > * {
+    margin: 20px;
+}
+
+.battleView {
+    display: flex;
+    flex-direction: row;
+}
+
+.battleBox {
+    margin: 100px;
+}
+
+.battleBox > h2 {
+    font-size: 48px;
+    text-align: center;
+}
+
+
+
+.avatar {
+    font-size: 120px;
+    font-family: Arial, Helvetica, sans-serif ;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    transition: all 0.1s;
+}
+
+.bigText {
+    font-size: 160px;
+}
+
+.winner {
+    color: green;
+}
+
+.loser {
+    color: red;
+    font-size: 100px;
+}
